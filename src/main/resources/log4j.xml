@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="test" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="log/test-service-0.1.log"/>
+        <param name="MaxFileSize" value="1024KB"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="TEST-SERVICE - %d{HH:mm:ss,SSS} %-5p - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="ro.jtonic.handsonrest">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="org.apache.cxf">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="org.apache.catalina">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="org.apache.commons">
+        <level value="WARN"/>
+    </logger>
+
+    <root>
+        <level value="ERROR"/>
+        <appender-ref ref="test"/>
+    </root>
+
+</log4j:configuration>
