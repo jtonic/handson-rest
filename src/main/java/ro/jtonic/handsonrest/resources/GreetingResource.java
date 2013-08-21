@@ -9,4 +9,9 @@ public class GreetingResource implements IGreetingResource {
         return "Hello 1st REST project!";
     }
 
+    @Override
+    public void deleteCourse() {
+        System.out.println("Deleting resource...");
+    }
+
 }
