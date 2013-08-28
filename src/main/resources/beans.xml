@@ -12,11 +12,15 @@
 
     <bean id="resource" class="ro.jtonic.handsonrest.resources.GreetingResource"/>
 
+    <bean id="multipartResource" class="ro.jtonic.handsonrest.resources.MultipartResource">
+
+    </bean>
     <bean id="jaxbJsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
 
     <jaxrs:server id="jaxrsServer" address="/">
         <jaxrs:serviceBeans>
             <ref bean="resource"/>
+            <ref bean="multipartResource"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jaxbJsonProvider"/>

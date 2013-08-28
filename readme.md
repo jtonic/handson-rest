@@ -6,13 +6,25 @@ In order to start using it you need not to install gradle because the gradle wra
 
 **In order to test simple greeting REST service:**
 
-1. run jetty server and deploy the war artefact
+1. run jetty server and deploy the war artifact
 
     $ ./gradlew jettyRunWar
 
 1. test the REST greeting service
 
+    Simple example:
     $ curl -v http://localhost:9090/handson-rest/hello
+
+1. test multipart with text/plain parts
+
+    $ curl -v -X POST http://localhost:9090/handson-rest/multipart/one -H 'Content-Type: multipart/form-data' -F username=antonel -F role=admin
+
+
+1. test multipart with 2 text/plain parts and a file
+
+    $ curl -v -X POST http://localhost:9090/handson-rest/multipart/two -H 'Content-Type: multipart/form-data' -F username=antonel -F role=admin -F "image=@/home/jtonic/github/jtonic/handson-rest/src/test/resources/avatar.jpg"
+
+
 
 1. stop jetty server
 
@@ -20,7 +32,15 @@ In order to start using it you need not to install gradle because the gradle wra
 
 What aspects I would like to implement in near future:
 
+TODO:
+=====
+
 1. upload byte array (picture) and text with multipart/form-data
+    - [V] Create resource
+    - [V] Create curl
+    - From Multipart to Spring resource
+    - Save locally
+
 1. security - authentication
 1. security - authorization
 1. caching
