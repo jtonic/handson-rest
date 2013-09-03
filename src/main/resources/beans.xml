@@ -12,10 +12,11 @@
 
     <bean id="resource" class="ro.jtonic.handsonrest.resources.GreetingResource"/>
 
-    <bean id="multipartResource" class="ro.jtonic.handsonrest.resources.MultipartResource">
+    <bean id="multipartResource" class="ro.jtonic.handsonrest.resources.MultipartResource"/>
 
-    </bean>
     <bean id="jaxbJsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+
+    <bean id="helloJacksonJsonProvider" class="ro.jtonic.handsonrest.providers.HelloJacksonJsonProvider"/>
 
     <jaxrs:server id="jaxrsServer" address="/">
         <jaxrs:serviceBeans>
@@ -24,6 +25,7 @@
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jaxbJsonProvider"/>
+            <ref bean="helloJacksonJsonProvider"/>
         </jaxrs:providers>
     </jaxrs:server>
 

@@ -25,7 +25,6 @@ In order to start using it you need not to install gradle because the gradle wra
     $ curl -v -X POST http://localhost:9090/handson-rest/multipart/two -H 'Content-Type: multipart/form-data' -F username=antonel -F role=admin -F "image=@/home/jtonic/github/jtonic/handson-rest/src/test/resources/avatar.jpg"
 
 
-
 1. stop jetty server
 
     $ ./gradlew jettyStop
@@ -41,9 +40,18 @@ TODO:
     - From Multipart to Spring resource
     - Save locally
 
+1. [V] custom media type support and multiple supported media type
+    
+    $ curl -v http://localhost:9090/handson-rest/hello_again -H "Accept: application/json" | json_pp
+
+    $ curl -v http://localhost:9090/handson-rest/hello_again -H "Accept: application/vnd.ro.jtonic.hello+json;version=1" | json_pp
+
+    $ curl -v http://localhost:9090/handson-rest/hello_again -H "Accept: text/plain" => HTTP/1.1 406 Not Acceptable
 1. security - authentication
 1. security - authorization
 1. caching
 1. HATEOAS
+
+
 
 **How to edit markdown?** http://daringfireball.net/projects/markdown/dingus
