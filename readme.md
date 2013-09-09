@@ -47,6 +47,12 @@ TODO:
     $ curl -v http://localhost:9090/handson-rest/hello_again -H "Accept: application/vnd.ro.jtonic.hello+json;version=1" | json_pp
 
     $ curl -v http://localhost:9090/handson-rest/hello_again -H "Accept: text/plain" => HTTP/1.1 406 Not Acceptable
+
+1. [X] Array @QueryParam
+1. [X] @PathParam with PathSegment
+1. [X] @MatrixParams
+1. [X] QueryParams and MatrixParams => Bean (value = "")
+1. Array @Context UriInfo
 1. security - authentication
 1. security - authorization
 1. caching
