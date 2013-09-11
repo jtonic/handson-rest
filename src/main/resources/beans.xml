@@ -23,6 +23,7 @@
             <ref bean="resource"/>
             <ref bean="multipartResource"/>
             <ref bean="courseResource"/>
+            <ref bean="carResource"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jaxbJsonProvider"/>

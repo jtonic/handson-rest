@@ -48,16 +48,34 @@ TODO:
 
     $ curl -v http://localhost:9090/handson-rest/hello_again -H "Accept: text/plain" => HTTP/1.1 406 Not Acceptable
 
-1. [X] Array @QueryParam
-1. [X] @PathParam with PathSegment
-1. [X] @MatrixParams
-1. [X] QueryParams and MatrixParams => Bean (value = "")
-1. Array @Context UriInfo
+1. [V] List/array @QueryParams
+
+    $ curl -v "http://localhost:9000/handson-rest/courses?name=math&name=history"
+
+1. [V] @PathParam with PathSegment
+
+    $ curl -v "http://localhost:9000/handson-rest/courses/matrix/audi;color=white;year=2010"
+
+1. [V] @MatrixParams
+
+    $ curl -v "http://localhost:9000/handson-rest/courses/math;name=math;duration=2h/apazargic"
+
+1. [V] QueryParams deserialized in a bean
+
+    $ curl -v "http://localhost:9000/handson-rest/courses/query?name=math&duration=2h"
+
+1. @Context UriInfo
+
+    $ curl -v "http://localhost:9000/handson-rest/courses/criteria?name=math&duration=2h"
+
 1. security - authentication
+
 1. security - authorization
+
 1. caching
+
 1. HATEOAS
 
-
+1. Generate REST docs with swagger. Also use Swagger UI to have a executable REST documentation.
 
 **How to edit markdown?** http://daringfireball.net/projects/markdown/dingus
