@@ -8,6 +8,8 @@ import ro.jtonic.handsonrest.api.CarResource;
 import ro.jtonic.handsonrest.api.CourseResource;
 import ro.jtonic.handsonrest.api.ICarResource;
 import ro.jtonic.handsonrest.api.ICourseResource;
+import ro.jtonic.handsonrest.api.IUserResource;
+import ro.jtonic.handsonrest.api.UserResource;
 import ro.jtonic.handsonrest.resources.GreetingResource;
 import ro.jtonic.handsonrest.api.IGreetingResource;
 
@@ -33,6 +35,11 @@ public class ApplicationConfig {
     @Bean
     public ICarResource carResource() {
         return new CarResource();
+    }
+
+    @Bean
+    public IUserResource userResource() {
+        return new UserResource();
     }
 
 }

@@ -93,6 +93,7 @@
                 </configuration>
             </plugin>
 
+<!--
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
@@ -101,7 +102,7 @@
                         <phase>compile</phase>
                         <configuration>
                             <target name="get markdown.mustache">
-                                <!-- Need to download markdown.mustache first to use strapdown.html.mustache -->
+                                &lt;!&ndash; Need to download markdown.mustache first to use strapdown.html.mustache &ndash;&gt;
                                 <get dest=".">
                                     <url url="https://raw.github.com/kongchen/api-doc-template/master/v1.1/markdown.mustache"/>
                                 </get>
@@ -113,7 +114,9 @@
                     </execution>
                 </executions>
             </plugin>
+-->
 
+<!--
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
@@ -141,6 +144,7 @@
                     </execution>
                 </executions>
             </plugin>
+-->
 
         </plugins>
     </build>

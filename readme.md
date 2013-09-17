@@ -70,6 +70,12 @@ TODO:
 
 1. security - authentication
 
+    Basic authentication
+
+    $ curl -v "http://localhost:9000/handson-rest/users" -u username:password
+
+    Try w/o -u or w/o above username password values.
+
 1. security - authorization
 
 1. caching
